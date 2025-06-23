@@ -36,8 +36,8 @@ function isPalindrome(str){
     console.log(true,`,The word ${str} is Palindrome`);
 }
 isPalindrome('iTopiNonAvevanoNipoti'.toLowerCase());
-isPalindrome('madam'.toLowerCase());
-isPalindrome('hello'.toLowerCase()); 
+isPalindrome('madam');
+isPalindrome('hello'); 
 
 // 3. Find the Maximum Number in an Array
 // Problem: Write a function that takes an array of numbers,
@@ -74,35 +74,36 @@ function factorial(n){
 factorial(5)
 
 // 5. Prime Number Check
-// Problem: Write a function that takes an integer num and checks if it is a prime number. A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. The function should return true if the number is prime and false otherwise.
-
+// Problem: Write a function that takes an integer num and checks if it is a prime number.
+//  A prime number is a natural number greater than 1,
+//  that has no positive divisors other than 1 and itself.
+//  The function should return true if the number is prime and false otherwise.
 // Example:
 // Input: 7
 // Output: true
 // Input: 10
 // Output: false (because it's divisible by 2 and 5)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function isPrime(num){
+    if (num <= 1){
+        console.log('Please Enter a vaild number > 1');
+    }
+    else{
+        for(let i = 2; i<num; i++){
+            if(num % i === 0){
+                return false
+            }
+        }
+    }
+    return true
+}
+console.log(isPrime(37));
+console.log(isPrime(7));
+console.log(isPrime(10));
 
 
 // 6. Remove Duplicates from an Array
-// Problem: Write a function that takes an array and returns a new array containing only the unique elements (no duplicates).
+// Problem: Write a function that takes an array and returns a new array,
+// containing only the unique elements (no duplicates).
 
 // Example:
 // Input: [1, 2, 2, 3, 4, 4, 5]
