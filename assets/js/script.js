@@ -55,6 +55,7 @@ function largestNumber(arr){
     }
     console.log(largest);
 }
+largestNumber([1, 5, 3, 9, 2])
 largestNumber([52,77,63,5,89,14,11])
 
 // 4. Factorial Calculation
@@ -63,25 +64,14 @@ largestNumber([52,77,63,5,89,14,11])
 // Example:
 // Input: 5
 // Output: 120
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let result = 1;
+function factorial(n){
+    for(let i = n; i>=1;i--){
+        result = result*i
+    }
+    console.log(result);
+}
+factorial(5)
 
 // 5. Prime Number Check
 // Problem: Write a function that takes an integer num and checks if it is a prime number. A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. The function should return true if the number is prime and false otherwise.
