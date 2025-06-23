@@ -59,7 +59,7 @@ largestNumber([52,77,63,5,89,14,11])
 
 // 4. Factorial Calculation
 // Problem: Write a function that calculates the factorial of a given number.
-//  (The factorial of 5 is 5 * 4 * 3 * 2 * 1).
+//  (The factorial of 5 is 5 * 4 * 3 * 2 * 1)
 // Example:
 // Input: 5
 // Output: 120
