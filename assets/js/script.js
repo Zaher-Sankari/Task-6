@@ -11,83 +11,55 @@ function reversed_str (str){
     }
     console.log(reversed);
 }
-reversed_str("javascript")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+reversed_str("javascript") 
 
 // 2. Palindrome Check
-// Problem: Write a function that checks if a given string is a palindrome (reads the same forwards and backward). It should return true if it is a palindrome and false if it is not.
-
+// Problem: Write a function that checks if a given string is a palindrome (
+// reads the same forwards and backward). 
+// It should return true if it is a palindrome and false if it is not.
 // Example:
 // Input: "madam"
 // Output: true
 // Input: "hello"
 // Output: false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function isPalindrome(str){
+    let i = 0;
+    let j = str.length -1;
+    while (i < j){
+        if (str[i] != str[j]){
+            console.log(false, `, The word ${str} is NOT Palindrome`);
+            return;
+        }
+        i++;
+        j--;
+    }
+    console.log(true,`,The word ${str} is Palindrome`);
+}
+isPalindrome('iTopiNonAvevanoNipoti'.toLowerCase());
+isPalindrome('madam'.toLowerCase());
+isPalindrome('hello'.toLowerCase()); 
 
 // 3. Find the Maximum Number in an Array
-// Problem: Write a function that takes an array of numbers and returns the largest number in it.
-
+// Problem: Write a function that takes an array of numbers,
+// and returns the largest number in it.
 // Example:
 // Input: [1, 5, 3, 9, 2]
 // Output: 9
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let largest;
+function largestNumber(arr){
+    for(i = 0; i<= arr.length; i++){
+        if (arr[i] > arr[i+1]){
+            largest = arr[i]
+            i++;
+        }
+    }
+    console.log(largest);
+}
+largestNumber([52,77,63,5,89,14,11])
 
 // 4. Factorial Calculation
-// Problem: Write a function that calculates the factorial of a given number. (The factorial of 5 is 5 * 4 * 3 * 2 * 1).
-
+// Problem: Write a function that calculates the factorial of a given number.
+//  (The factorial of 5 is 5 * 4 * 3 * 2 * 1).
 // Example:
 // Input: 5
 // Output: 120
@@ -515,4 +487,3 @@ reversed_str("javascript")
 // Example:
 // Input: [1, 2, 3], [3, 4, 5]
 // Output: [1, 2, 4, 5]
-
