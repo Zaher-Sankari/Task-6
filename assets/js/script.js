@@ -84,8 +84,8 @@ factorial(5)
 // Input: 10
 // Output: false (because it's divisible by 2 and 5)
 function isPrime(num){
-    if (num <= 1){
-        console.log('Please Enter a vaild number > 1');
+    if (num <= 1 || num % 1 !== 0){
+        return false
     }
     else{
         for(let i = 2; i<num; i++){
@@ -96,9 +96,10 @@ function isPrime(num){
     }
     return true
 }
-console.log(isPrime(37));
 console.log(isPrime(7));
 console.log(isPrime(10));
+console.log(isPrime(39));
+console.log(isPrime(53.2));
 
 
 // 6. Remove Duplicates from an Array
