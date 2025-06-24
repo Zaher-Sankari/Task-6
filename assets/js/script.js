@@ -105,32 +105,30 @@ console.log(isPrime(53.2));
 // 6. Remove Duplicates from an Array
 // Problem: Write a function that takes an array and returns a new array,
 // containing only the unique elements (no duplicates).
-
 // Example:
 // Input: [1, 2, 2, 3, 4, 4, 5]
 // Output: [1, 2, 3, 4, 5]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function noDuplicates(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let j;
+        for (j = 0; j < newArr.length; j++){
+            if (arr[i] === newArr[j]){
+                break;
+            }
+        }
+        if (j === newArr.length) {
+        newArr[newArr.length] = arr[i];
+        }
+    }
+    return newArr;
+}
+console.log(noDuplicates([1, 2, 2, 3, 4, 4, 5,'a','c','d','a']));
 
 
 // 7. Find the Missing Number in a Sequence
-// Problem: You are given an array containing 99 unique numbers whose values range from 1 to 100. Write a function to find the missing number.
+// Problem: You are given an array containing 99 unique numbers whose values range from 1 to 100.
+//  Write a function to find the missing number.
 
 // Example:
 // Input: An array containing all numbers from 1 to 100 except for the number 55.
