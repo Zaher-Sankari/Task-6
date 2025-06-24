@@ -129,13 +129,21 @@ console.log(noDuplicates([1, 2, 2, 3, 4, 4, 5,'a','c','d','a']));
 // 7. Find the Missing Number in a Sequence
 // Problem: You are given an array containing 99 unique numbers whose values range from 1 to 100.
 //  Write a function to find the missing number.
-
 // Example:
 // Input: An array containing all numbers from 1 to 100 except for the number 55.
 // Output: 55
-
-
-
+function missingNumber(){
+    const n = 100;
+    const actualSum = n * ((1 + n) /2)
+    let sum = 0;
+    for (let i = 1; i<=100; i++){
+        if (i !== 55){
+            sum +=i
+        }
+    }
+    return actualSum - sum
+}
+console.log(missingNumber());
 
 
 
