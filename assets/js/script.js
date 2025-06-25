@@ -145,29 +145,18 @@ function missingNumber(){
 }
 console.log(missingNumber());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 8. Capitalize the First Letter of Each Word
 // Problem: Write a function that takes a sentence and returns a new sentence with the first letter of each word capitalized.
-
 // Example:
 // Input: "hello world from javascript"
 // Output: "Hello World From Javascript"
-
+// function capitaleFirst(str){
+//     let word = str.split(" ")
+//     let capitalized = [ ];
+//     for (let i = 0; i <= str.length; i++){
+//         if (word[i] !== )
+//     }
+// }
 
 
 
@@ -195,8 +184,10 @@ console.log(missingNumber());
 // Output: true
 // Input: "hello", "world"
 // Output: false
-
-
+function anagram(word1,word2){
+    if(word1.length() !== word2.length()){
+        return false;
+    }}
 
 
 
@@ -242,13 +233,26 @@ console.log(missingNumber());
 
 
 // 11. Find a Pair of Numbers that Sum to a Target Value
-// Problem: Write a function that takes an array of numbers and a target number, and returns the first pair of numbers from the array that sum up to the target.
-
+// Problem: Write a function that takes an array of numbers and a target number,
+//  and returns the first pair of numbers from the array that sum up to the target.
 // Example:
 // Input: [10, 5, 2, 7, 8, 3], 10
 // Output: [2, 8]
-
-
+function pairSum(arr,n){
+    let result = []
+    for(let i = 0;i <= arr.length-1; i++){
+        for(let j = 0;j <= arr.length-1; j++){
+            if(arr[i] == arr[j]){
+                continue
+            }
+            else if(arr[i]+arr[j] == n){
+              result = [arr[i], arr[j]]
+              return result
+            }
+            }
+        }
+    }
+console.log(pairSum([10, 5, 2, 7, 8, 3], 10))
 
 
 
@@ -325,7 +329,20 @@ console.log(missingNumber());
 // Example:
 // Input: "hello"
 // Output: { h: 1, e: 1, l: 2, o: 1 }
-
+function frequency(str){
+    let freqCount = {}
+    for(let i = 0; i <= str.length; i++){
+        let c = str.charAt(i) // c in character
+        if(!freqCount[c]){
+            freqCount[c] = 1
+        }
+        else{
+            freqCount[c] = freqCount[c] + 1
+        }
+    }
+    return freqCount
+}
+console.log(frequency('hello'))
 
 
 
