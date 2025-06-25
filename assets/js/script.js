@@ -277,6 +277,23 @@ console.log(pairSum([10, 5, 2, 7, 8, 3], 10))
 // Example:
 // Input: [1, 2, 3, 4, 5], 2
 // Output: [3, 4, 5, 1, 2]
+function rotateLeft(arr, n) {
+    if (arr.length !== 0) {
+        for (let i = 0; i < n; i++) {
+            let firstNumber = arr[0];
+            for (let j = 0; j < arr.length - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[arr.length - 1] = firstNumber;
+        }
+    } else {
+        console.log(`Array is Empty`);
+        return false;
+    }
+    return arr;
+}
+
+console.log(rotateLeft([1, 2, 3, 4], 3));
 
 
 
@@ -303,7 +320,24 @@ console.log(pairSum([10, 5, 2, 7, 8, 3], 10))
 // Example:
 // Input: [1, 2, 3, 4], [3, 4, 5, 6]
 // Output: [3, 4]
-
+function intersection(arr1,arr2){
+    let newArr = []
+    let k = 0
+    for(let i = 0; i<= arr1.length-1; i++){
+        for(j = 0; j<= arr2.length-1; j++){
+            if(arr1[i] == arr2[j]){
+                newArr[k] = arr1[i]
+                k++;
+            }
+            else{
+                continue
+            }
+        }
+    }
+    console.log(newArr)
+}
+intersection([1,2,3,4],[3,4,5,6]);
+intersection([5,8,7,3,2],[6,7,5,3,9]);
 
 
 
@@ -368,7 +402,24 @@ console.log(frequency('hello'))
 // Example:
 // Input: [1, [2, 3], [4, [5, 6]]]
 // Output: [1, 2, 3, 4, 5, 6]
+function flattenNestedArray(arr) {
+    let flattenedArray = [];
+    let k = 0;
 
+    for (let i = 0; i <= arr.length - 1; i++) {
+        if (!Array.isArray(arr[i])) {
+            flattenedArray[k] = arr[i];
+            k++;
+        } else {
+            for (let j = 0; j <= arr[i].length - 1; j++) {
+                flattenedArray[k] = arr[i][j];
+                k++;
+            }
+        }
+    }
+    return flattenedArray;
+}
+console.log(flattenNestedArray([1, [2, 3], [4, [5, 6]]]));
 
 
 
@@ -394,7 +445,19 @@ console.log(frequency('hello'))
 // Example:
 // Input: "The quick brown fox jumped over the lazy dog"
 // Output: "jumped"
-
+function largestWord(str){
+    let strArr = str.split(" ")
+    let largest = " "
+    for (let i = 0; i < strArr.length;i++){
+        if(strArr[i].length > 0){
+            if(strArr[i].length > largest.length){
+                largest = strArr[i]
+        }
+    }
+}
+return largest
+}
+console.log(largestWord("The quick brown fox jumped over the lazy dog"));
 
 
 
