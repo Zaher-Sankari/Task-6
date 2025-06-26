@@ -64,14 +64,15 @@ largestNumber([52,77,63,5,89,14,11])
 // Example:
 // Input: 5
 // Output: 120
-let result = 1;
 function factorial(n){
-    for(let i = n; i>=1;i--){
-        result = result*i
-    }
+    let result = 1;
+        for(let i = n; i>=1;i--){
+            result = result*i
+        }
     console.log(result);
 }
 factorial(5)
+factorial(6)
 
 // 5. Prime Number Check
 // Problem: Write a function that takes an integer num and checks if it is a prime number.
