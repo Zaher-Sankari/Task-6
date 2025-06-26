@@ -365,7 +365,7 @@ intersection([5,8,7,3,2],[6,7,5,3,9]);
 // Output: { h: 1, e: 1, l: 2, o: 1 }
 function frequency(str){
     let freqCount = {}
-    for(let i = 0; i <= str.length; i++){
+    for(let i = 0; i <= str.length-1; i++){
         let c = str.charAt(i) // c in character
         if(!freqCount[c]){
             freqCount[c] = 1
