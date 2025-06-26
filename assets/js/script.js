@@ -246,8 +246,8 @@ function pairSum(arr,n){
                 continue
             }
             else if(arr[i]+arr[j] == n){
-              result = [arr[i], arr[j]]
-              return result
+                result = [arr[i], arr[j]]
+                return result
             }
             }
         }
@@ -512,7 +512,20 @@ console.log(largestWord("The quick brown fox jumped over the lazy dog"));
 // Input: [{ name: "Alice", age: 30 }, { name: "Bob", age: 25 }, { name: "Charlie", age: 35 }]
 // Output: [{ name: "Bob", age: 25 }, { name: "Alice", age: 30 }, { name: "Charlie", age: 35 }]
 // Solution: (Using Bubble Sort algorithm)
-
+function byAgeSort(arr){
+    let store;
+    for (let i = 0; i < arr.length; i++){
+        for (let j = 0; j < arr.length-1; j++){
+            if (arr[j].age > arr[j+1].age){
+                store = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = store;
+            }
+        }
+    }
+    return arr
+}
+console.log(byAgeSort([{ name: "Alice", age: 30 }, { name: "Bob", age: 25 }, { name: "Charlie", age: 35 }]));
 
 
 
