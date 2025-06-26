@@ -150,30 +150,23 @@ console.log(missingNumber());
 // Example:
 // Input: "hello world from javascript"
 // Output: "Hello World From Javascript"
-// function capitaleFirst(str){
-//     let word = str.split(" ")
-//     let capitalized = [ ];
-//     for (let i = 0; i <= str.length; i++){
-//         if (word[i] !== )
-//     }
-// }
+function capitalFirst(str){
+    let splitStr = str.split(" ")
+    let capitalized = ""
+    let store = "";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    for(let i = 0; i < splitStr.length; i++){
+        if(splitStr[i].length > 0){
+            store = splitStr[i].charAt(0).toUpperCase() + splitStr[i].slice(1).toLowerCase()
+            capitalized += store
+            if(i !== splitStr.length -1){
+                capitalized += " "
+        }
+    }
+}
+return capitalized;
+}
+console.log(capitalFirst('hEllO wORld fRom JavAScriPt'));
 
 
 // 9. Anagram Check
@@ -212,7 +205,10 @@ function anagram(word1,word2){
 // Example:
 // Input: [1, 2, 3, 4, 5, 6, 7], 3
 // Output: [[1, 2, 3], [4, 5, 6], [7]]
+function chunkOfArray (arr,n){
 
+}
+console.log(chunkOfArray([1, 2, 3, 4, 5, 6, 7], 3));
 
 
 
