@@ -254,23 +254,6 @@ function pairSum(arr,n){
     }
 console.log(pairSum([10, 5, 2, 7, 8, 3], 10))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 12. Rotate an Array to the Left
 // Problem: Write a function that takes an array and a number n, and rotates the array elements to the left by n positions.
 
@@ -294,25 +277,6 @@ function rotateLeft(arr, n) {
 }
 
 console.log(rotateLeft([1, 2, 3, 4], 3));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 13. Find the Intersection of Two Arrays
 // Problem: Write a function that takes two arrays and returns a new array containing only the elements that are common to both arrays (the intersection).
@@ -340,23 +304,6 @@ intersection([1,2,3,4],[3,4,5,6]);
 intersection([5,8,7,3,2],[6,7,5,3,9]);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 14. Count Character Frequency in a String
 // Problem: Write a function that takes a string and returns an object representing a frequency map, where each key is a character and its value is the number of times it appears.
 
@@ -377,24 +324,6 @@ function frequency(str){
     return freqCount
 }
 console.log(frequency('hello'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 15. Flatten a Nested Array
 // Problem: Write a function that flattens a nested array (an array containing elements that may themselves be arrays) into a single, flat array.
@@ -423,22 +352,6 @@ console.log(flattenNestedArray([1, [2, 3], [4, [5, 6]]]));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 16. Find the Longest Word in a Sentence
 // Problem: Write a function that takes a sentence and returns the longest word in it. If there are multiple words with the same maximum length, return the first one that appears.
 
@@ -460,23 +373,6 @@ return largest
 console.log(largestWord("The quick brown fox jumped over the lazy dog"));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 17. Find the Most Frequent Element in an Array
 // Problem: Write a function that takes an array of numbers or strings and returns the most frequently occurring element.
 
@@ -485,29 +381,32 @@ console.log(largestWord("The quick brown fox jumped over the lazy dog"));
 // Output: 2
 // Input: ['a', 'b', 'c', 'a', 'b', 'a']
 // Output: 'a'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function mostFrequent(arr){
+        let freqCount = {}
+        for(let i = 0; i < arr.length; i++){
+            let c = arr[i]
+            if(!freqCount[c]){
+                freqCount[c] = 1
+            }
+            else{
+                freqCount[c] = freqCount[c] + 1
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+        let c = arr[i];
+        if (freqCount[c] !== 1) {
+            return c; 
+        }
+    }
+    return null
+    }
+    console.log(mostFrequent([1, 2, 3, 2, 2, 4, 5, 2]))
+    console.log(mostFrequent(['a', 'b', 'c', 'a', 'b', 'a']))
 
 
 // 18. Sort an Array of Objects by a Property
-// Problem: You have an array of objects, where each object represents a person with a name and age. Write a function to sort the array by age in ascending order (from youngest to oldest) without using Array.prototype.sort.
-
+// Problem: You have an array of objects, where each object represents a person with a name and age.
+// Write a function to sort the array by age in ascending order (from youngest to oldest) without using Array.prototype.sort.
 // Example:
 // Input: [{ name: "Alice", age: 30 }, { name: "Bob", age: 25 }, { name: "Charlie", age: 35 }]
 // Output: [{ name: "Bob", age: 25 }, { name: "Alice", age: 30 }, { name: "Charlie", age: 35 }]
@@ -528,52 +427,38 @@ function byAgeSort(arr){
 console.log(byAgeSort([{ name: "Alice", age: 30 }, { name: "Bob", age: 25 }, { name: "Charlie", age: 35 }]));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 19. Find the First Non-Repeating Character
 // Problem: Write a function that takes a string and finds the first character that does not repeat.
-
 // Example:
 // Input: "swiss"
 // Output: "w"
 // Input: "aabbcc"
 // Output: null (or a suitable message)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function nonRepeat(str){
+    let freqCount = {}
+    for(let i = 0; i < str.length; i++){
+        let c = str.charAt(i) // c in character
+        if(!freqCount[c]){
+            freqCount[c] = 1
+        }
+        else{
+            freqCount[c] = freqCount[c] + 1
+        }
+    }
+    for (let i = 0; i < str.length; i++) {
+    let c = str.charAt(i);
+    if (freqCount[c] === 1) {
+        return c; 
+    }
+}
+return null
+}
+console.log(nonRepeat('aabbcc'))
 
 
 // 20. Symmetric Difference of Two Arrays
-// Problem: Write a function that takes two arrays and returns a new array containing the elements that are present in one of the arrays, but not in both.
+// Problem: Write a function that takes two arrays and returns a new array,
+// containing the elements that are present in one of the arrays, but not in both.
 
 // Example:
 // Input: [1, 2, 3], [3, 4, 5]
