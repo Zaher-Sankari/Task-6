@@ -133,18 +133,18 @@ console.log(noDuplicates([1, 2, 2, 3, 4, 4, 5,'a','c','d','a']));
 // Example:
 // Input: An array containing all numbers from 1 to 100 except for the number 55.
 // Output: 55
-function missingNumber(){
-    const n = 100;
+function missingNumber(n){
+    let random = Math.floor(Math.random() * n) + 1;
     const actualSum = n * ((1 + n) /2)
     let sum = 0;
-    for (let i = 1; i<=100; i++){
-        if (i !== 55){
+    for (let i = 1; i<=n; i++){
+        if (i !== random){
             sum +=i
         }
     }
     return actualSum - sum
 }
-console.log(missingNumber());
+console.log(missingNumber(100));
 
 // 8. Capitalize the First Letter of Each Word
 // Problem: Write a function that takes a sentence and returns a new sentence with the first letter of each word capitalized.
