@@ -378,27 +378,27 @@ console.log(largestWord("The quick brown fox jumped over the lazy dog"));
 // Output: 2
 // Input: ['a', 'b', 'c', 'a', 'b', 'a']
 // Output: 'a'
-    function mostFrequent(arr){
-        let freqCount = {}
-        for(let i = 0; i < arr.length; i++){
-            let c = arr[i]
-            if(!freqCount[c]){
-                freqCount[c] = 1
-            }
-            else{
-                freqCount[c] = freqCount[c] + 1
-            }
+function mostFrequent(arr){
+    let freqCount = {}
+    for(let i = 0; i < arr.length; i++){
+        let c = arr[i]
+        if(!freqCount[c]){
+            freqCount[c] = 1
         }
-        for (let i = 0; i < arr.length; i++) {
-        let c = arr[i];
-        if (freqCount[c] !== 1) {
-            return c; 
+        else{
+            freqCount[c] = freqCount[c] + 1
         }
     }
-    return null
+    for (let i = 0; i < arr.length; i++) {
+    let c = arr[i];
+    if (freqCount[c] !== 1) {
+        return c; 
     }
-    console.log(mostFrequent([1, 2, 3, 2, 2, 4, 5, 2]))
-    console.log(mostFrequent(['a', 'b', 'c', 'a', 'b', 'a']))
+}
+return null
+}
+console.log(mostFrequent([1, 2, 3, 2, 2, 4, 5, 2]))
+console.log(mostFrequent(['a', 'b', 'c', 'a', 'b', 'a']))
 
 
 // 18. Sort an Array of Objects by a Property
