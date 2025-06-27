@@ -169,7 +169,6 @@ return capitalized;
 }
 console.log(capitalFirst('hEllO wORld fRom JavAScriPt'));
 
-
 // 9. Anagram Check
 // Problem: Write a function to check if two strings are anagrams of each other (contain the same characters with the same frequency).
 
@@ -178,26 +177,27 @@ console.log(capitalFirst('hEllO wORld fRom JavAScriPt'));
 // Output: true
 // Input: "hello", "world"
 // Output: false
-function anagram(word1,word2){
-    if(word1.length() !== word2.length()){
-        return false;
-    }}
+function areAnagrams(word1, word2) {
+    if (word1.length !== word2.length){
+        return false
+    }
+    let freq1 = frequency(word1);
+    let freq2 = frequency(word2);
+    let keys1 = Object.keys(freq1);
+    let keys2 = Object.keys(freq2);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if (keys1.length !== keys2.length){
+        return false
+    }
+    for (let key of keys1) {
+        if (freq1[key] !== freq2[key]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(areAnagrams("listen", "silent"));
+console.log(areAnagrams("hello", "world"));  
 
 
 // 10. Chunk an Array
