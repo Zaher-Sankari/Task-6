@@ -460,3 +460,35 @@ console.log(nonRepeat('aabbcc'))
 // Example:
 // Input: [1, 2, 3], [3, 4, 5]
 // Output: [1, 2, 4, 5]
+function symmetricDiff(arr1,arr2){
+let diff = [];
+let k = 0;
+for (let i = 0; i < arr1.length; i++) {
+    let value1 = arr1[i];
+    let j;
+    for (j = 0; j < arr2.length; j++) {
+        if (value1 == arr2[j]) {
+            break; 
+        }
+    }
+    if (j == arr2.length) {
+        diff[k] = value1;
+        k++;
+    }
+}
+for (let i = 0; i < arr2.length; i++) {
+    let value2 = arr2[i];
+    let j;
+    for (j = 0; j < arr1.length; j++) {
+        if (value2 == arr1[j]) {
+            break;
+        }
+    }
+    if (j == arr1.length) {
+        diff[k] = value2;
+        k++;
+    }
+}
+return diff
+}
+console.log(symmetricDiff([1,2,3],[3,4,5]));
