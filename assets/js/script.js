@@ -285,7 +285,7 @@ function intersection(arr1,arr2){
     let newArr = []
     let k = 0
     for(let i = 0; i<= arr1.length-1; i++){
-        for(j = 0; j<= arr2.length-1; j++){
+        for(let j = 0; j<= arr2.length-1; j++){
             if(arr1[i] == arr2[j]){
                 newArr[k] = arr1[i]
                 k++;
