@@ -206,10 +206,25 @@ console.log(areAnagrams("hello", "world"));
 // Example:
 // Input: [1, 2, 3, 4, 5, 6, 7], 3
 // Output: [[1, 2, 3], [4, 5, 6], [7]]
-function chunkOfArray (arr,n){
+function chunkArray(arr, n) {
+    let result = [];
+    let current = [];
+    let k = 0        
+    let count = 0;        
 
+    for (let i = 0; i < arr.length; i++) {
+        current[count] = arr[i]; 
+        count++;
+        if (count === n) {
+            result[k] = current;
+            k++;
+            current = [];
+            count = 0;
+        }
+    }
+    return result;
 }
-console.log(chunkOfArray([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(chunkArray([1, 2, 3, 4, 5, 6], 3));
 
 
 
